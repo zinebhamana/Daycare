@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Garderie El Yasmine</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fdf6e3;
+            color: #333;
+            margin: 0;
+        }
+
+        header {
+            background-color: #ff6f61;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 15px 10px;
+            padding: 15px 30px;
+            background-color: #4a90e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #357ab8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #ff6f61;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h2 {
+            color: #ff6f61;
+        }
+    </style>
+</head>
+<body>
+    <header>Garderie El Yasmine</header>
+    <main>
+        <h2>Bienvenue sur le site de la garderie</h2>
+        <p>Choisissez une catégorie d'enfants ou ajoutez un nouvel enfant :</p>
+        <a href="/children" class="btn">Voir tous les enfants</a>
+        <a href="/children?group=Bebe" class="btn">Bébés</a>
+        <a href="/children?group=Prescolaire" class="btn">Préscolaire</a>
+        <a href="/children?group=Preparatoire" class="btn">Préparatoire</a>
+    </main>
+    <footer>&copy; 2025 Garderie El Yasmine - Tous droits réservés</footer>
+</body>
+</html>

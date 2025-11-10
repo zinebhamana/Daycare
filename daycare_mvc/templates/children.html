@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des enfants</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fdf6e3;
+            color: #333;
+            margin: 0;
+        }
+
+        header {
+            background-color: #ff6f61;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #fff0f5;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ff6f61;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #ffe4e1;
+        }
+
+        .form-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #e0f7fa;
+            width: 60%;
+            border-radius: 15px;
+        }
+
+        .form-container input, .form-container select {
+            padding: 10px;
+            margin: 5px 0;
+            width: 90%;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .form-container button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #357ab8;
+        }
+
+        .back-button, .all-button {
+            display: inline-block;
+            margin: 15px 10px;
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-button:hover, .all-button:hover {
+            background-color: #357ab8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #ff6f61;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>Liste des enfants {% if group %} - {{ group }} {% endif %}</header>
+    <main>
+        <a href="/" class="back-button">Retour à l'accueil</a>
+        {% if group %}
+        <a href="/children" class="all-button">Voir tous les enfants</a>
+        {% endif %}
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Âge</th>
+                <th>Contact</th>
+                <th>Groupe</th>
+            </tr>
+            {% for child in children %}
+            <tr>
+                <td>{{ child.id }}</td>
+                <td>{{ child.nom }}</td>
+                <td>{{ child.prenom }}</td>
+                <td>{{ child.age }}</td>
+                <td>{{ child.contact }}</td>
+                <td>{{ child.groupe }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+      <table border="1" style="border-collapse: collapse; margin:auto;">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Âge</th>
+        <th>Contact</th>
+        <th>Groupe</th>
+        <th>Actions</th>
+    </tr>
+    {% for child in children %}
+    <tr>
+        <td>{{ child.id }}</td>
+        <td>{{ child.nom }}</td>
+        <td>{{ child.prenom }}</td>
+        <td>{{ child.age }}</td>
+        <td>{{ child.contact }}</td>
+        <td>{{ child.groupe }}</td>
+        <td>
+            <form action="{{ url_for('delete_child', child_id=child.id) }}" method="post" style="display:inline;">
+                <button type="submit" style="background-color:#ff6f61;color:white;border:none;padding:5px 10px;border-radius:6px;">Supprimer</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+        <div class="form-container">
+            <h3>Ajouter un enfant</h3>
+            <form method="POST" action="/children">
+                <input type="number" name="id" placeholder="ID" required>
+                <input type="text" name="nom" placeholder="Nom" required>
+                <input type="text" name="prenom" placeholder="Prénom" required>
+                <input type="number" name="age" placeholder="Âge" required>
+                <input type="text" name="contact" placeholder="Contact" required>
+                <select name="groupe" required>
+                    <option value="">Choisir le groupe</option>
+                    <option value="Bebe">Bébés</option>
+                    <option value="Prescolaire">Préscolaire</option>
+                    <option value="Preparatoire">Préparatoire</option>
+                </select>
+                <br>
+                <button type="submit">Ajouter</button>
+            </form>
+        </div>
+    </main>
+    <footer>&copy; 2025 Garderie El Yasmine - Tous droits réservés</footer>
+</body>
+</html>

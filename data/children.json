@@ -1,0 +1,162 @@
+[
+  {
+    "ID": 1,
+    "Nom": "Rafaa",
+    "Prenom": "Houda",
+    "Age": 3,
+    "Contact": "0560923569",
+    "Groupe": "Prescolaire"
+  },
+  {
+    "ID": 2,
+    "Nom": "Nafaa",
+    "Prenom": "Sara",
+    "Age": 2,
+    "Contact": "0779263485",
+    "Groupe": "Bebe"
+  },
+  {
+    "ID": 3,
+    "Nom": "Nafaa",
+    "Prenom": "Yousra",
+    "Age": 5,
+    "Contact": "0779263485",
+    "Groupe": "Preparatoire"
+  },
+  {
+    "ID": 4,
+    "Nom": "Seddiki",
+    "Prenom": "Mohamed",
+    "Age": 5,
+    "Contact": "0661234589",
+    "Groupe": "Preparatoire"
+  },
+  {
+    "ID": 5,
+    "Nom": "Brahimi",
+    "Prenom": "Joude",
+    "Age": 5,
+    "Contact": "0778564321",
+    "Groupe": "Preparatoire"
+  },
+  {
+    "ID": 6,
+    "Nom": "Hamadou",
+    "Prenom": "Manessa",
+    "Age": 5,
+    "Contact": "0541263985",
+    "Groupe": "Preparatoire"
+  },
+  {
+    "ID": 7,
+    "Nom": "Kertous",
+    "Prenom": "Mohamed",
+    "Age": 5,
+    "Contact": "0663596845",
+    "Groupe": "Preparatoire"
+  },
+  {
+    "ID": 8,
+    "Nom": "Mostfai",
+    "Prenom": "Oumaima",
+    "Age": 5,
+    "Contact": "0552839947",
+    "Groupe": "Preparatoire"
+  },
+  {
+    "ID": 9,
+    "Nom": "Sellam",
+    "Prenom": "Maram",
+    "Age": 5,
+    "Contact": "0551362589",
+    "Groupe": "Preparatoire"
+  },
+  {
+    "ID": 10,
+    "Nom": "Bairi",
+    "Prenom": "Nassim",
+    "Age": 2,
+    "Contact": "0770314850",
+    "Groupe": "Bebe"
+  },
+  {
+    "ID": 11,
+    "Nom": "Allalou",
+    "Prenom": "Amir",
+    "Age": 2,
+    "Contact": "0774156382",
+    "Groupe": "Bebe"
+  },
+  {
+    "ID": 12,
+    "Nom": "Chaabane",
+    "Prenom": "Hadil",
+    "Age": 1,
+    "Contact": "0556341287",
+    "Groupe": "Bebe"
+  },
+  {
+    "ID": 13,
+    "Nom": "Kerkoud",
+    "Prenom": "Iyad",
+    "Age": 4,
+    "Contact": "0662534187",
+    "Groupe": "Prescolaire"
+  },
+  {
+    "ID": 14,
+    "Nom": "Guehlouz",
+    "Prenom": "Israa",
+    "Age": 2,
+    "Contact": "0775632148",
+    "Groupe": "Bebe"
+  },
+  {
+    "ID": 15,
+    "Nom": "Bacha",
+    "Prenom": "Lyna",
+    "Age": 3,
+    "Contact": "0542395614",
+    "Groupe": "Prescolaire"
+  },
+  {
+    "ID": 16,
+    "Nom": "Niar",
+    "Prenom": "Lana",
+    "Age": 4,
+    "Contact": "0669421536",
+    "Groupe": "Prescolaire"
+  },
+  {
+    "ID": 17,
+    "Nom": "Zerguine",
+    "Prenom": "Wassim",
+    "Age": 4,
+    "Contact": "0773154620",
+    "Groupe": "Prescolaire"
+  },
+  {
+    "ID": 18,
+    "Nom": "Ferha",
+    "Prenom": "Sifeddine",
+    "Age": 3,
+    "Contact": "0550200020",
+    "Groupe": "Prescolaire"
+  },
+  {
+    "ID": 19,
+    "Nom": "Saadoudi",
+    "Prenom": "Aya",
+    "Age": 3,
+    "Contact": "0771423695",
+    "Groupe": "Prescolaire"
+  },
+  {
+    "ID": 20,
+    "Nom": "Sellami",
+    "Prenom": "Rayan",
+    "Age": 4,
+    "Contact": "0663948620",
+    "Groupe": "Prescolaire"
+  }
+]
