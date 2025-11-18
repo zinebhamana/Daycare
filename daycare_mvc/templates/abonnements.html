@@ -1,0 +1,196 @@
+<!-- templates/abonnements.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subscriptions Management</title>
+    <style>
+        /* Reset */
+        body, h1, h2, p, ul, li, table {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f9ff; /* keep original */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #17a2b8; /* keep original */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        header a {
+            color: #fffae6;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        header a:hover {
+            color: #ffd700;
+        }
+
+        /* Main */
+        main {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+
+        table th {
+            background-color: #d0f0f6; /* light cyan header */
+        }
+
+        table tr:nth-child(even) {
+            background-color: #e0f7fa;
+        }
+
+        table tr:hover {
+            background-color: #b2ebf2;
+        }
+
+        /* Forms */
+        form {
+            margin-top: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        form select, form input[type="text"], form input[type="number"] {
+            width: 50%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="checkbox"] {
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Updated Button */
+        form button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            background-color: #17a2b8; /* pastel yellow style like Employee button */
+            color: white;
+            border: 2px solid #d39e00;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+
+        form button:hover {
+            background-color: #d39e00;
+            color: white;
+            border-color: #ad7c00;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Subscriptions Management</h1>
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </header>
+
+    <main>
+        <!-- List of Subscriptions -->
+        <section>
+            <h2>List of Subscriptions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Price (DA)</th>
+                        <th>Children Signed In</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for abonnement in abonnements %}
+                    <tr>
+                        <td>{{ abonnement.id }}</td>
+                        <td>{{ abonnement.type }}</td>
+                        <td>{{ abonnement.price }}</td>
+                        <td>
+                            {% for child in abonnement.children %}
+                                {{ child.name }} (ID: {{ child.id }}){% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Add New Subscription -->
+        <section>
+            <h2>Add New Subscription</h2>
+            <form action="{{ url_for('add_new_abonnement') }}" method="post">
+                <!-- Subscription Type Dropdown -->
+                <label for="type_name">Type:</label>
+                <select name="type_name" id="type_name" required>
+                    {% for abo in abonnements %}
+                        <option value="{{ abo.type }}">{{ abo.type }}</option>
+                    {% endfor %}
+                </select>
+
+                <!-- Children Checkboxes -->
+                <label>Children Signed In:</label>
+                {% for child in children %}
+                    <input type="checkbox" name="child_ids" value="{{ child.id }}">
+                    {{ child.name }} (ID: {{ child.id }})<br>
+                {% endfor %}
+
+                <button type="submit">Add Subscription</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Daycare Management System</p>
+    </footer>
+</body>
+</html>

@@ -1,18 +1,24 @@
-from interfaces.payable import Payable
+class Abonnement:
+    def __init__(self, id, type_, price, children_ids=None):
+        self.id = id
+        self.type = type_
+        self.price = price
+        self.children_ids = children_ids or []
+        self.children = []
 
-class Abonnement(Payable):
-    def __init__(self, montant):
-        self.montant = montant
-        self.etatPaiement = "Non payée"
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            data["id"],
+            data["type"],   # <-- here
+            data["price"],
+            data.get("children", [])
+        )
 
-    def process_payment(self):
-        self.etatPaiement = "Payée"
-
-class Donation(Payable):
-    def __init__(self, montant, donateur=None):
-        self.montant = montant
-        self.donateur = donateur
-        self.etatPaiement = "Non payée"
-
-    def process_payment(self):
-        self.etatPaiement = "Payée"
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "type": self.type,
+            "price": self.price,
+            "children": self.children_ids
+        }

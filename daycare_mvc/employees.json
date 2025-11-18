@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Ahmed Benali",
+        "role": "Teacher",
+        "contact": "0551234567"
+    },
+    {
+        "id": 2,
+        "name": "Sofia Mansouri",
+        "role": "Teacher",
+        "contact": "0779876543"
+    },
+    {
+        "id": 4,
+        "name": "Leila Touati",
+        "role": "Cook",
+        "contact": "0559876543"
+    },
+    {
+        "id": 5,
+        "name": "Mohamed Bensaid",
+        "role": "Cleaner",
+        "contact": "0771234567"
+    },
+    {
+        "id": 6,
+        "name": "Ines Belkacem",
+        "role": "Teacher",
+        "contact": "0668765432"
+    },
+    {
+        "id": 7,
+        "name": "Amina Ferhat",
+        "role": "Teacher",
+        "contact": "0552345678"
+    },
+    {
+        "id": 8,
+        "name": "Ikram Yettou",
+        "role": "Manager",
+        "contact": "0778765432"
+    },
+    {
+        "id": 9,
+        "name": "Rachid Saadi",
+        "role": "Driver",
+        "contact": "0661239874"
+    },
+    {
+        "id": 10,
+        "name": "Siham Ouali",
+        "role": "Assistant",
+        "contact": "0553456789"
+    },
+    {
+        "id": 11,
+        "name": "abcd",
+        "role": "teacher",
+        "contact": "0774136590"
+    }
+]

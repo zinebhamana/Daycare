@@ -123,9 +123,9 @@ class Garderie:
                 html += "<p>Aucun participant</p>"
 
         html += "</body></html>"
-        with open("garderie_atelier.html", "w", encoding="utf-8") as f:
+        with open("../garderie_atelier.html", "w", encoding="utf-8") as f:
             f.write(html)
-        webbrowser.open("garderie_atelier.html")
+        webbrowser.open("../garderie_atelier.html")
         print("Page HTML générée : garderie_atelier.html")
 
 # ------------------ Exemple d'utilisation ------------------

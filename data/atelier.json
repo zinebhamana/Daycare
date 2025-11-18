@@ -1,0 +1,32 @@
+[
+    {
+
+        "nom": "Atelier de Peinture",
+        "date": "2025-11-10",
+        "participants": [3, 5, 11]
+    },
+    {
+
+        "nom": "Atelier de Chant",
+        "date": "2025-11-12",
+        "participants": [4, 6]
+    },
+    {
+
+        "nom": "Atelier de Jardinage",
+        "date": "2025-11-14",
+        "participants": [1, 2, 8, 10]
+    },
+    {
+
+        "nom": "Atelier de Motricité",
+        "date": "2025-11-16",
+        "participants": [5, 6, 7, 9, 12]
+    },
+    {
+
+        "nom": "Atelier de Cuisine",
+        "date": "2025-11-18",
+        "participants": [2, 3, 4, 11]
+    }
+]

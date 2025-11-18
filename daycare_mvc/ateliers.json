@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Painting Workshop",
+    "date": "2025-11-18",
+    "children": [1, 2, 5, 10],
+    "employees": [1, 2]
+  },
+  {
+    "id": 2,
+    "name": "Music Workshop",
+    "date": "2025-11-19",
+    "children": [3, 4, 6, 7],
+    "employees": [6, 7]
+  },
+  {
+    "id": 3,
+    "name": "Dance Workshop",
+    "date": "2025-11-20",
+    "children": [8, 9, 11, 12],
+    "employees": [1, 6]
+  },
+  {
+    "id": 4,
+    "name": "Science Experiment",
+    "date": "2025-11-21",
+    "children": [13, 14, 15, 16],
+    "employees": [2]
+  },
+  {
+    "id": 5,
+    "name": "pizza workshop",
+    "date": "2025-11-22",
+    "children": [17, 18, 19, 20],
+    "employees": [4]
+  }
+]

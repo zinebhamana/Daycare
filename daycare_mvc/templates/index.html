@@ -1,72 +1,104 @@
+<!-- templates/index.html -->
+
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Garderie El Yasmine</title>
+    <title>Daycare Management</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fdf6e3;
-            color: #333;
+        /* Reset */
+        body, h1, h2, p, ul, li, table {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
+        /* Body */
+        body {
+            background-color: #fff0f2; /* very light pink */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header */
         header {
-            background-color: #ff6f61;
+            background-color: #ffb6b9; /* pastel pink */
+            color: white;
             padding: 20px;
             text-align: center;
-            color: white;
-            font-size: 2.5em;
-            font-weight: bold;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
-        main {
-            padding: 50px;
-            text-align: center;
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
         }
 
-        .btn {
-            display: inline-block;
-            margin: 15px 10px;
-            padding: 15px 30px;
-            background-color: #4a90e2;
-            color: white;
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
             text-decoration: none;
-            border-radius: 12px;
+            color: #ff6f61; /* darker pink */
             font-weight: bold;
-            font-size: 1.2em;
-            transition: 0.3s;
+            padding: 12px 25px; /* bigger button */
+            border: 2px solid #ff6f61; /* border */
+            border-radius: 10px; /* rounded corners */
+            transition: all 0.3s;
+            font-size: 1.1em; /* bigger text */
+            display: inline-block;
         }
 
-        .btn:hover {
-            background-color: #357ab8;
+        nav ul li a:hover {
+            background-color: #ff6f61; /* fill on hover */
+            color: white;
+            border-color: #e0554d; /* darker border on hover */
         }
 
+        /* Main */
+        main {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 15px;
-            background-color: #ff6f61;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        h2 {
-            color: #ff6f61;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <header>Garderie El Yasmine</header>
+    <header>
+        <h1>Welcome to Daycare Management</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('children') }}">Children</a></li>
+            <li><a href="{{ url_for('employees') }}">Employees</a></li>
+            <li><a href="{{ url_for('ateliers') }}">Workshops</a></li>
+            <li><a href="{{ url_for('abonnements') }}">Subscriptions</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <h2>Bienvenue sur le site de la garderie</h2>
-        <p>Choisissez une catégorie d'enfants ou ajoutez un nouvel enfant :</p>
-        <a href="/children" class="btn">Voir tous les enfants</a>
-        <a href="/children?group=Bebe" class="btn">Bébés</a>
-        <a href="/children?group=Prescolaire" class="btn">Préscolaire</a>
-        <a href="/children?group=Preparatoire" class="btn">Préparatoire</a>
+        <p>Select a section from the menu to manage the daycare data.</p>
     </main>
-    <footer>&copy; 2025 Garderie El Yasmine - Tous droits réservés</footer>
+
+    <footer>
+        <p>&copy; 2025 Daycare Management System</p>
+    </footer>
 </body>
 </html>

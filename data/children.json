@@ -48,27 +48,11 @@
     "Groupe": "Preparatoire"
   },
   {
-    "ID": 7,
-    "Nom": "Kertous",
-    "Prenom": "Mohamed",
-    "Age": 5,
-    "Contact": "0663596845",
-    "Groupe": "Preparatoire"
-  },
-  {
     "ID": 8,
     "Nom": "Mostfai",
     "Prenom": "Oumaima",
     "Age": 5,
     "Contact": "0552839947",
-    "Groupe": "Preparatoire"
-  },
-  {
-    "ID": 9,
-    "Nom": "Sellam",
-    "Prenom": "Maram",
-    "Age": 5,
-    "Contact": "0551362589",
     "Groupe": "Preparatoire"
   },
   {

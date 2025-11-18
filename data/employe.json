@@ -1,0 +1,18 @@
+[
+  {
+    "ID": 1,
+    "Nom": "Djaadi rayane",
+    "Adresse": "23 rue baba khouya mohamed"
+  },
+  {
+    "ID": 2,
+    "Nom": "Baali hanaa",
+    "Adresse" : "Route nationale numero 05",
+
+  },
+  {
+    "ID": 3,
+    "Nom": "Sellam hassina",
+    "Adresse" : "Rue zarrouki zarrouk"
+  }
+]

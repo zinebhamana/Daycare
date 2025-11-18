@@ -91,7 +91,7 @@ class WebUI(UIInterface):
             nom_donateur = f" ({p.donateur})" if hasattr(p, "donateur") else ""
             html += f"<li>{type_paiement}{nom_donateur}: {p.montant} - {p.etatPaiement}</li>"
         html += "</ul></body></html>"
-        filename = "garderie_dip.html"
+        filename = "HTML/garderie_dip.html"
         with open(filename, "w", encoding="utf-8") as f:
             f.write(html)
         webbrowser.open(filename)
@@ -193,7 +193,7 @@ class Garderie:
 
 # ------------------ Exemple d'utilisation ------------------
 # Choisir le type de stockage et UI
-storage = JSONStorage("garderie.json")  # ou CSVStorage("garderie.csv")
+storage = JSONStorage("HTML/garderie.json")  # ou CSVStorage("garderie.csv")
 ui = WebUI()  # ou CLIUI()
 
 garderie = Garderie("El yasmine Lilbaraim", storage, ui)

@@ -144,9 +144,9 @@ class HTMLManager:
 
         html += "</body></html>"
 
-        with open("garderie_ocp.html", "w", encoding="utf-8") as f:
+        with open("../HTML/garderie_ocp.html", "w", encoding="utf-8") as f:
             f.write(html)
-        webbrowser.open("garderie_ocp.html")
+        webbrowser.open("../HTML/garderie_ocp.html")
         print("Page HTML générée : garderie_ocp.html")
 
 # ------------------ Exemple d'utilisation ------------------

@@ -1,188 +1,178 @@
+<!-- templates/children.html -->
+
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Liste des enfants</title>
+    <title>Children Management</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fdf6e3;
-            color: #333;
-            margin: 0;
-        }
+        body, h1, h2, p, ul, li, table { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
+        body { background:#f5f9ff; color:#333; padding:20px;}
+        header { background:#4a90e2; color:white; text-align:center; padding:20px; border-radius:10px; margin-bottom:20px;}
+        header a { color:#fffae6; margin-left:20px; text-decoration:none; font-weight:bold;}
+        header a:hover { color:#ffd700; }
+        main { background:#fff; padding:20px; border-radius:10px; box-shadow:0px 4px 10px rgba(0,0,0,0.05);}
+        .filter-buttons { text-align:center; margin-bottom:25px; }
+        .filter-buttons button { padding:12px 25px; background:#4a90e2; border:4a90e2 2px solid #; border-radius:10px; margin:5px; cursor:pointer; font-size:1.1em; font-weight:bold; transition:0.3s; }
+        .filter-buttons button:hover { background:#1e7e34; }
+        table { width:100%; border-collapse:collapse; margin-top:15px;}
+        table th, table td { border:1px solid #ccc; padding:10px; }
+        table th { background:#d0e4ff; }
+        table tr:nth-child(even){ background:#f0f8ff; }
+        .hidden{ display:none; }
+        form label { display:block; margin-top:10px; font-weight:bold; }
+        form input { width:50%; padding:8px; margin-top:5px; border:1px solid #bbb; border-radius:5px; }
+        form button { margin-top:15px; padding:12px 25px; background-color:#4a90e2; color:white; border:2px solid #1e7e34; border-radius:10px; font-size:1.1em; cursor:pointer; transition:0.3s; }
+        form button:hover { background:#1e7e34; }
 
-        header {
-            background-color: #ff6f61;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            font-size: 2em;
-            font-weight: bold;
+        /* Delete button style */
+        .delete-btn {
+            background-color:#ff4d4d;
+            border:1px solid #d43f3f;
+            border-radius:5px;
+            color:white;
+            padding:5px 10px;
+            cursor:pointer;
+            font-size:0.9em;
         }
-
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-
-        table {
-            margin: 20px auto;
-            border-collapse: collapse;
-            width: 80%;
-            background-color: #fff0f5;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            text-align: center;
-        }
-
-        th {
-            background-color: #ff6f61;
-            color: white;
-        }
-
-        tr:hover {
-            background-color: #ffe4e1;
-        }
-
-        .form-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #e0f7fa;
-            width: 60%;
-            border-radius: 15px;
-        }
-
-        .form-container input, .form-container select {
-            padding: 10px;
-            margin: 5px 0;
-            width: 90%;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
-
-        .form-container button {
-            padding: 10px 20px;
-            margin-top: 10px;
-            background-color: #4a90e2;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .form-container button:hover {
-            background-color: #357ab8;
-        }
-
-        .back-button, .all-button {
-            display: inline-block;
-            margin: 15px 10px;
-            padding: 10px 20px;
-            background-color: #4a90e2;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .back-button:hover, .all-button:hover {
-            background-color: #357ab8;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #ff6f61;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+        .delete-btn:hover { background-color:#d43f3f; }
+        footer { text-align:center; margin-top:20px; color:#777;}
     </style>
 </head>
 <body>
-    <header>Liste des enfants {% if group %} - {{ group }} {% endif %}</header>
-    <main>
-        <a href="/" class="back-button">Retour à l'accueil</a>
-        {% if group %}
-        <a href="/children" class="all-button">Voir tous les enfants</a>
-        {% endif %}
 
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Âge</th>
-                <th>Contact</th>
-                <th>Groupe</th>
-            </tr>
-            {% for child in children %}
-            <tr>
-                <td>{{ child.id }}</td>
-                <td>{{ child.nom }}</td>
-                <td>{{ child.prenom }}</td>
-                <td>{{ child.age }}</td>
-                <td>{{ child.contact }}</td>
-                <td>{{ child.groupe }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-      <table border="1" style="border-collapse: collapse; margin:auto;">
-    <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Âge</th>
-        <th>Contact</th>
-        <th>Groupe</th>
-        <th>Actions</th>
-    </tr>
+<header>
+    <h1>Children Management</h1>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</header>
+
+<main>
+
+    <h2>List of Children</h2>
+
+    <div class="filter-buttons">
+        <button onclick="showTable('bebe')">Bébé</button>
+        <button onclick="showTable('prescolaire')">Préscolaire</button>
+        <button onclick="showTable('preparatoire')">Préparatoire</button>
+    </div>
+
+    {% set groups = {'bebe': [], 'prescolaire': [], 'preparatoire': []} %}
     {% for child in children %}
-    <tr>
-        <td>{{ child.id }}</td>
-        <td>{{ child.nom }}</td>
-        <td>{{ child.prenom }}</td>
-        <td>{{ child.age }}</td>
-        <td>{{ child.contact }}</td>
-        <td>{{ child.groupe }}</td>
-        <td>
-            <form action="{{ url_for('delete_child', child_id=child.id) }}" method="post" style="display:inline;">
-                <button type="submit" style="background-color:#ff6f61;color:white;border:none;padding:5px 10px;border-radius:6px;">Supprimer</button>
-            </form>
-        </td>
-    </tr>
+        {% set g = child.group.lower().replace("é","e") %}
+        {% if g in groups %}
+            {% set _ = groups[g].append(child) %}
+        {% endif %}
     {% endfor %}
-</table>
 
+    <!-- Bébé -->
+    <section id="table-bebe" class="child-table">
+        <h3 style="color:#4a90e2;">Bébé</h3>
+        <table>
+            <thead>
+                <tr><th>ID</th><th>Name</th><th>Age</th><th>Group</th><th>Contact</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+                {% for child in groups['bebe'] %}
+                <tr>
+                    <td>{{ child.id }}</td>
+                    <td>{{ child.name }}</td>
+                    <td>{{ child.age }}</td>
+                    <td>{{ child.group }}</td>
+                    <td>{{ child.contact }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('delete_child', child_id=child.id) }}" onsubmit="return confirm('Are you sure you want to delete this child?');">
+                            <button type="submit" class="delete-btn">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
 
-        <div class="form-container">
-            <h3>Ajouter un enfant</h3>
-            <form method="POST" action="/children">
-                <input type="number" name="id" placeholder="ID" required>
-                <input type="text" name="nom" placeholder="Nom" required>
-                <input type="text" name="prenom" placeholder="Prénom" required>
-                <input type="number" name="age" placeholder="Âge" required>
-                <input type="text" name="contact" placeholder="Contact" required>
-                <select name="groupe" required>
-                    <option value="">Choisir le groupe</option>
-                    <option value="Bebe">Bébés</option>
-                    <option value="Prescolaire">Préscolaire</option>
-                    <option value="Preparatoire">Préparatoire</option>
-                </select>
-                <br>
-                <button type="submit">Ajouter</button>
-            </form>
-        </div>
-    </main>
-    <footer>&copy; 2025 Garderie El Yasmine - Tous droits réservés</footer>
+    <!-- Préscolaire -->
+    <section id="table-prescolaire" class="child-table hidden">
+        <h3 style="color:#4a90e2;">Préscolaire</h3>
+        <table>
+            <thead>
+                <tr><th>ID</th><th>Name</th><th>Age</th><th>Group</th><th>Contact</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+                {% for child in groups['prescolaire'] %}
+                <tr>
+                    <td>{{ child.id }}</td>
+                    <td>{{ child.name }}</td>
+                    <td>{{ child.age }}</td>
+                    <td>{{ child.group }}</td>
+                    <td>{{ child.contact }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('delete_child', child_id=child.id) }}" onsubmit="return confirm('Are you sure you want to delete this child?');">
+                            <button type="submit" class="delete-btn">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Préparatoire -->
+    <section id="table-preparatoire" class="child-table hidden">
+        <h3 style="color:#4a90e2;">Préparatoire</h3>
+        <table>
+            <thead>
+                <tr><th>ID</th><th>Name</th><th>Age</th><th>Group</th><th>Contact</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+                {% for child in groups['preparatoire'] %}
+                <tr>
+                    <td>{{ child.id }}</td>
+                    <td>{{ child.name }}</td>
+                    <td>{{ child.age }}</td>
+                    <td>{{ child.group }}</td>
+                    <td>{{ child.contact }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('delete_child', child_id=child.id) }}" onsubmit="return confirm('Are you sure you want to delete this child?');">
+                            <button type="submit" class="delete-btn">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <hr style="margin:30px 0;">
+
+    <h2>Add New Child</h2>
+    <form action="{{ url_for('add_new_child') }}" method="post">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Age:</label>
+        <input type="number" name="age" required>
+
+        <label>Group (bebe / prescolaire / preparatoire):</label>
+        <input type="text" name="group" required>
+
+        <label>Contact:</label>
+        <input type="text" name="contact">
+
+        <button type="submit">Add Child</button>
+    </form>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Daycare Management System</p>
+</footer>
+
+<script>
+function showTable(type){
+    document.querySelectorAll(".child-table").forEach(t => t.classList.add("hidden"));
+    document.getElementById("table-"+type).classList.remove("hidden");
+}
+</script>
+
 </body>
 </html>
